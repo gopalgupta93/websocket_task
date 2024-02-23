@@ -32,7 +32,8 @@ print("WebSocketConnetingEvent");
 webSocketService.stream.listen((data) {
 print(data);
 add(WebSocketReceived(data));
- },onError: (){ (WebSocketErrorEvent());});
+ },onError: (e){ print("myerror");
+  WebSocketErrorEvent();}, );
     } else if (event is WebSocketReceived) {
       yield WebSocketDataReceived(event.data);
     }else if (event is WebSocketErrorEvent) {
